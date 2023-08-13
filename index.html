@@ -1,71 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
-<script src="lib/jquery/jquery-3.2.1.min.js"></script>
-<script src="lib/jquery/jquery.cookie.js"></script>
-<link rel="stylesheet" type="text/css"  href="lib/layui/css/layui.css">
-
-<style>
-    .buttonClass{
-        text-align: center;
-    }
-    #main {
-        width: 100%;
-        height: 73%;
-        position: absolute;
-        background: url("images/background.jpg") no-repeat;
-        background-size: 100% 100%;
-    }
-    .labelClass{
-        width: 200px;
-        font-size: 20px;
-        margin-right: 15px;
-        margin-left: 0px;
-        color: white;
-    }
-</style>
-
 <body>
 <form id='addForm'>
     <div   id="main" style="width: 100%;height: 100%">
 		<img src="升学宴邀请函电子贺卡喜庆海报.jpg"/>
    </div>
 </form>
-<script >
-    function clickButton(){
-
-        var version = $('input[name="version"]:checked').val();
-        if(version == 'V2.1'){
-            $.ajax({
-                type: "get",
-                url: "/versionTwo",
-                data: $('#addForm').serialize(),
-                async: false,
-                dataType: 'html',
-                btn: ['保存'],
-                success: function (data) {
-                    alert("V2.1文件生成成功");
-                },
-            });
-        }else{
-            $.ajax({
-                type: "get",
-                url: "/versionOne",
-                data: $('#addForm').serialize(),
-                async: false,
-                dataType: 'html',
-                btn: ['保存'],
-                success: function (data) {
-                    alert("V1.1文件生成成功");
-                },
-            });
-        }
-
-
-
-
-    }
-</script>
 </body>
 </html>
